@@ -22,7 +22,7 @@ public class TheProcessor extends AbstractProcessor {
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         this.round += 1;
-        messager.printMessage(Kind.NOTE, "Round %d: [%s]".formatted(
+        messager.printMessage(Kind.NOTE, String.format("Round %d: [%s]",
             this.round,
             roundEnv.getRootElements().stream().map(Element::getSimpleName).collect(Collectors.joining(","))));
         return false;
