@@ -14,6 +14,8 @@ OpenJDK Runtime Environment (build 22-ea+25-1998)
 OpenJDK 64-Bit Server VM (build 22-ea+25-1998, mixed mode, sharing)
 ```
 
+The problem is also reproducible with versions 21, 17 and 11.
+
 ### Steps to reproduce
 1. Compile the annotation processor
 ```sh
