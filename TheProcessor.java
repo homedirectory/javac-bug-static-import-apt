@@ -4,6 +4,7 @@ import javax.annotation.processing.*;
 import javax.lang.model.*;
 import javax.lang.model.element.*;
 import javax.lang.model.util.*;
+import javax.tools.Diagnostic.Kind;
 
 @SupportedAnnotationTypes("*")
 public class TheProcessor extends AbstractProcessor {
@@ -21,7 +22,7 @@ public class TheProcessor extends AbstractProcessor {
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         this.round += 1;
-        messager.printNote("Round %d: [%s]".formatted(
+        messager.printMessage(Kind.NOTE, "Round %d: [%s]".formatted(
             this.round,
             roundEnv.getRootElements().stream().map(Element::getSimpleName).collect(Collectors.joining(","))));
         return false;
